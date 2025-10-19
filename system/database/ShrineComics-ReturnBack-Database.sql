@@ -10,9 +10,10 @@ CREATE TABLE IF NOT EXISTS user(
 	password VARCHAR(512) NOT NULL,
 	email VARCHAR(512) NOT NULL UNIQUE,
 	address TEXT NULL,
-	role ENUM("reader","writer") NULL,
+	role ENUM('reader','writer') NULL,
 	point INT NULL,
-	status ENUM("login","logout","suspend"),
+	status ENUM('login','logout','suspend'),
+	telephone_number VARCHAR(512) NULL UNIQUE,
 	join_date DATETIME DEFAULT CURRENT_TIMESTAMP,
 	hash_code VARCHAR(512) NOT NULL UNIQUE
 );
